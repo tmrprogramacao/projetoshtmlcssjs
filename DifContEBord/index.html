@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing Exempl</title>
+    <style>
+        .content{
+            display: flex;
+            gap: 20px;
+            margin: 40px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 10px solid black;
+            background-color: lightblue;
+            text-align: center;
+            font-weight: bold;
+        }
+        /*Padão: content-box*/
+        .content-box{
+            box-sizing: content-box;
+        }
+        /* Com border box*/
+        .border-box{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparando content-box vs border-box</h1>
+
+    <div class="container">
+        <div class="box content-box">content-box</div>
+        <div class="box border-box">border-box</div>
+    </div>
+</body>
+</html>
