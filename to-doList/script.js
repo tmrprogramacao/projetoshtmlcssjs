@@ -14,16 +14,25 @@ function addTask(){
     const li = document.createElement("li");
     li.textContent = taskText;
 
+    //Botão de marca como concluída
+    const checkBtn = document.createElement("button");
+    checkBtn.textContent= "✅";
+    checkBtn.style.marginLeft= "1px";
+    checkBtn.style.marginRight= "1px";
+    checkBtn.onclick = () => li.classList.toggle("completed")
+
     //Botão de remover
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = "❌";
-    removeBtn.style.marginLeft = "5px";
+    removeBtn.textContent = "🗑️";
+    removeBtn.style.marginLeft = "1px";
+    removeBtn.style.marginRight = "1px";
     removeBtn.onclick = () => li.remove();
 
-    //Marcar como concluída ao clicar
-    li.onclick = () => li.classList.toggle("completed");
+    //Adicionar botões à tarefa
+    li.appendChild(checkBtn);
+    li.appendChild(removeBtn)
 
-    li.appendChild(removeBtn);
+   //Adicionar a tarefa à lista
     taskList.appendChild(li);
 
     //Limpar input

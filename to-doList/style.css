@@ -52,6 +52,6 @@ li{
     align-items: center; 
 }
 li.completed{
-    text-decoration: line-through;
+    text-decoration: none;
     background: #d4edda;
 }
