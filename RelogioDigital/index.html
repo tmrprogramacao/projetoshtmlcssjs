@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+ <html lang="pt-Br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Digital</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #282c34;
+            color:#61dafb;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #clock{
+            font-size: 4rem;
+            background: black;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+            margin-bottom: 15px;
+        }
+        #date{
+            margin-top: 15px;
+            font-size: 2.5rem;
+            color: rgb(167, 162, 162);
+        }
+    </style>
+ </head>
+ <body>
+    <div id="clock">00:00:00</div>
+    <div id="date">Dia da Semana, 00/00/0000</div>
+
+    <script>
+        function updateClock(){
+            const now = new Date(); // pega a hora atual
+
+            //Hora
+            let hours = String(now.getHours()).padStart(2, "0"); //horas com 2 dígitos
+            let minutes = String(now.getMinutes()).padStart(2,"0") //minutos com 2 dígitos
+            let seconds = String(now.getSeconds()).padStart(2,"0")
+
+            document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+            //Dia da Semana
+            const days = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            let dayName = days[now.getDay()];
+
+            //Data 
+            let day =String(now.getDate()).padStart(2,"0");
+            let month = String(now.getMonth() + 1).padStart(2, "0"); //messes começão em 0
+            let year = now.getFullYear();
+
+            document.getElementById("date").textContent = `${dayName},${day}/${month}/${year}`
+
+        }
+            //Atualiza a cada 1 segundo
+            setInterval(updateClock, 1000);
+
+            //Chama a função imediatamente para não esperar 1 segundo
+            updateClock();
+    </script>
+ </body>
+ </html>
