@@ -4,57 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Senha</title>
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container{
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-        h2{
-            text-align: center;
-        }
-        input[type="range"]{
-            width: 100%;
-        }
-        .output{
-            background: #eaeaea;
-            padding: 10px;
-            margin-bottom: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-        button{
-            width: 100%;
-            padding: 10px;
-            background: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover{
-            background-color: #45a049;
-        }
-        label{
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin: 6px 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+    link
 </head>
 <body>
 <div class="container">
@@ -78,47 +29,6 @@ Tamanho: <span id="lengthValue">12</span>
 <button onclick="generatePassword()">Gerar senha</button>
 <button style="margin-top: 8px; background: #333;" onclick="copyPassword()">Copiar</button>
 </div>
-
-
-<script>
-const output = document.getElementById("passwordOutput");
-const lengthInput = document.getElementById("length");
-const lengthValue = document.getElementById("lengthValue");
-
-
-lengthInput.addEventListener("input", () => {
-lengthValue.textContent = lengthInput.value;
-});
-
-
-function generatePassword() {
-const length = lengthInput.value;
-const includeUpper = document.getElementById("uppercase").checked;
-const includeNumbers = document.getElementById("numbers").checked;
-const includeSymbols = document.getElementById("symbols").checked;
-
-
-let chars = "abcdefghijklmnopqrstuvwxyz";
-if (includeUpper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-if (includeNumbers) chars += "0123456789";
-if (includeSymbols) chars += "!@#$%^&*()-_=+[]{};:,.<>?/";
-
-
-let password = "";
-for (let i = 0; i < length; i++) {
-password += chars.charAt(Math.floor(Math.random() * chars.length));
-}
-
-
-output.textContent = password;
-}
-
-
-function copyPassword() {
-const text = output.textContent;
-navigator.clipboard.writeText(text);
-alert("Senha copiada!");
-}
-</script>
+<script src="index.js"></script>
 </body>
 </html>
