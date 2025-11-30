@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Jejum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Jejum</h2>
+        <label>Início do Jejum</label>
+        <input type="datetime-local" id="inicio">
+
+        <label>Fim do Jejum</label>
+        <input type="datetime-local" id="fim">
+
+        <button onclick="calcularJejum()">Calcular</button>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
