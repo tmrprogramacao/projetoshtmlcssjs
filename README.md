@@ -1,2 +1,3 @@
-Pasta para criar projetos e treinar códigos com HTML | CSS | JS
+Pasta para criar projetos simples e treinar códigos com HTML | CSS | JS
+
 
