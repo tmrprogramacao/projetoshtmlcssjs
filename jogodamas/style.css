@@ -1,0 +1,129 @@
+/* Reset básico e fonte padrão */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, Arial, sans-serif;
+}
+/* Fundo da página e centralização do conteúdo */
+body {
+  background: #0f172a; /* azul escuro elegante */
+  color: #f9fafb;
+  display: grid;
+  place-items: center;
+  min-height: 100vh; /* ocupa a tela inteira */
+}
+
+/* Espaço do título */
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Caixa que envolve todo o jogo */
+.game-wrapper {
+  display: flex;
+  flex-direction: column; /* elementos ficam em coluna */
+  align-items: center;
+  gap: 1rem; /* espaçamento entre eles */
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+/* Texto da vez do jogador */
+#turn {
+  font-size: 1rem;
+  opacity: .9;
+  margin-bottom: .5rem;
+}
+
+/* Tabuleiro de 8x8 usando grid CSS */
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 64px);
+  grid-template-rows: repeat(8, 64px);
+  border-radius: .75rem;
+  overflow: hidden;
+  border: 3px solid #e5e7eb44;
+}
+
+/* Cada casa do tabuleiro */
+.cell {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center; /* centraliza peça */
+  cursor: pointer;
+  transition: background .2s;
+}
+
+/* Casas escuras */
+.dark {
+  background: #374151;
+}
+
+/* Casas claras */
+.light {
+  background: #9ca3af;
+}
+
+/* Quando o jogador seleciona uma peça */
+.cell.selected {
+  outline: 3px solid #22c55e;
+  outline-offset: -3px;
+}
+
+/* Estilo geral das peças */
+.piece {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: .75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Time vermelho */
+.red {
+  background: #ef4444;
+}
+
+/* Time azul */
+.blue {
+  background: #60a5fa;
+}
+
+/* Peça rei (dama) */
+.king {
+  box-shadow: 0 0 0 3px #fde047 inset; /* efeito de coroa */
+}
+
+/* Botão */
+button {
+  padding: .6rem 1rem;
+  border-radius: .75rem;
+  border: none;
+  cursor: pointer;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 700;
+  transition: .25s;
+}
+
+button:hover {
+  opacity: .9;
+  transform: translateY(-2px);
+}
+
+/* Rodapé */
+.footer-info {
+  font-size: .85rem;
+  opacity: .8;
+}
+
+
+
