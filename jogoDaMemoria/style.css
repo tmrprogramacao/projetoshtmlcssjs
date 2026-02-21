@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container{
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+.top-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input{
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+}
+
+button{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #00c9a7;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #00a389;
+}
+
+.stats{
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.card{
+     perspective: 1000px;
+     width: 100%;
+     aspect-ratio: 1/1;
+}
+
+.card-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.virada .card-inner{
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(18px, 4vw, 28px);
+    backface-visibility: hidden;
+}
+
+.card-front{
+    background: #00c9a7;
+}
+
+.card-back{
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+#ranking{
+    list-style: none;
+    margin-top: 10px;
+}
+
+#ranking li{
+    margin: 5px 0;
+}
+
+@media (max-width: 600px){
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
