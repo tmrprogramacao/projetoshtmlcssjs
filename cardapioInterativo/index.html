@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Bella Pizza</h1>
+        <div class="controles">
+            <input type="text" id="busca" placeholder="Busque sua pizza...">
+            <div class="filtros">
+                <button class="btn-filtro" data-categoria="todos">Todos</button>
+                <button class="btn-filtro" data-categoria="tradicionais">Tradicionais</button>
+                <button class="btn-filtro" data-categoria="especial">Especiais</button>
+                <button class="btn-filtro" data-categoria="doce">Doces</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="cardapio" class="grid-pizzas"></section>
+        <aside id="sidebar-carrinho">
+            <h2>Seu Pedido</h2>
+            <div id="itens-carrinho"></div>
+            <div class="todos">Total: R$<samp id="valor-total">0,00</samp></div>
+
+        </aside>
+    </main>
+    <div id="modal-detalhes" class="modal-oculto">
+        <div class="modal-conteudo">
+            <span id="fecha-modal">&times;</span>
+            <img id="modal-img" alt="">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-decricao"></p>
+            <p id="modal-preco"></p>
+            <button id="modal-add-carrinho">Adicinar</button>
+
+        </div>
+
+    </div>
+    <footer>
+        Site desenvolvido por <strong>Thaís Midlej</strong> em 2026.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
